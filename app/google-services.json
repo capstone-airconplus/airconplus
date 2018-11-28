@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "231727129750",
+    "firebase_url": "https://capstone-df6bb.firebaseio.com",
+    "project_id": "capstone-df6bb",
+    "storage_bucket": "capstone-df6bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231727129750:android:404c63b45d13e2b4",
+        "android_client_info": {
+          "package_name": "com.example.iop9i.airconplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231727129750-920lk1kk4t4mmv3p5n01a4gfq7305i2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iop9i.airconplus",
+            "certificate_hash": "a9637bf068401c6cbcc3d4fcc853ccba34ed0628"
+          }
+        },
+        {
+          "client_id": "231727129750-u7pel1qg09us8i9g51039jfpp5e8btft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWp3MJqaC8OWaJ8ZFKOfPO7HeoM-PChg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231727129750-u7pel1qg09us8i9g51039jfpp5e8btft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
