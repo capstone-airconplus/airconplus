@@ -22,9 +22,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById (R.id.fab);
         fab.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction ("Action", null).show ();
             }
         });
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById (R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle (
@@ -69,11 +72,12 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId ();
 
+        /*
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
+        */
         return super.onOptionsItemSelected (item);
     }
 
@@ -94,10 +98,6 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction ().replace (R.id.content_main, new ThirdLayout ()) .commit ();
         } else if (id == R.id.nav_fourth_layout) {
             manager.beginTransaction ().replace (R.id.content_main, new FourthLayout ()) .commit ();
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById (R.id.drawer_layout);

@@ -35,7 +35,7 @@ public class SecondLayout extends Fragment {
     FirebaseDatabase mDB = FirebaseDatabase.getInstance();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     DatabaseReference mRef = mDB.getReference().getRoot();
-    //LoginDTO loginDTO = new LoginDTO();
+    LoginDTO loginDTO = new LoginDTO();
 
 
     @Override
@@ -54,7 +54,7 @@ public class SecondLayout extends Fragment {
         mRef.child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                LoginDTO loginDTO = dataSnapshot.getValue(LoginDTO.class);
+                loginDTO = dataSnapshot.getValue(LoginDTO.class);
                 System.out.println("@@@@@DB 잘 들어갔나요??@@@@@@@@@@@@@@");
                 System.out.println(loginDTO.aircon_name);
                 System.out.println(loginDTO.indoor_temp);
@@ -72,6 +72,7 @@ public class SecondLayout extends Fragment {
         });
 
 
+        // loginDTO.indoor_temp
         v = inflater.inflate (R.layout.second_layout, container, false);
 
         lineChart = (LineChart)v.findViewById(R.id.chart);

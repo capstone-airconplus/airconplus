@@ -55,8 +55,8 @@ public class FourthLayout extends Fragment {
             public void onClick(View view) {
                 notice.setVisibility (View.GONE);
                 samsung_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimaryDark));
-                lg_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
-                winia_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
+                lg_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
+                winia_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
                 fragmentTransaction.replace (R.id.fragment, new SamsungFragment());
@@ -69,9 +69,9 @@ public class FourthLayout extends Fragment {
             @Override
             public void onClick(View view) {
                 notice.setVisibility (View.GONE);
-                samsung_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
+                samsung_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
                 lg_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimaryDark));
-                winia_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
+                winia_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
                 fragmentTransaction.replace (R.id.fragment, new LgFragment());
@@ -84,8 +84,8 @@ public class FourthLayout extends Fragment {
             @Override
             public void onClick(View view) {
                 notice.setVisibility (View.GONE);
-                samsung_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
-                lg_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimary));
+                samsung_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
+                lg_Btn.setBackgroundColor (getResources ().getColor (R.color.colorButton_background));
                 winia_Btn.setBackgroundColor (getResources ().getColor (R.color.colorPrimaryDark));
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();

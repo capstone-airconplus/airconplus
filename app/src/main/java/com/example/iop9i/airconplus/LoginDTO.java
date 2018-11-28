@@ -13,11 +13,12 @@ public class LoginDTO {
     double outdoor_hum;  // 외부 습도
     double using_time;  // 사용시간
     double elec_fee;  // 전기세 electricity fee
+    int on;
 
     public LoginDTO(){}
 
-    public LoginDTO(String UID, String email, String aircon_name, double aircon_power, int indoor_temp, int indoor_hum,
-                    int outdoor_hum, int outdoor_temp, int using_time, int elec_fee){
+    public LoginDTO(String UID, String email, String aircon_name, double aircon_power, double indoor_temp, double indoor_hum,
+                    double outdoor_hum, double outdoor_temp, double using_time, double elec_fee, double on){
         this.UID = UID;
         this.email = email;
         this.aircon_name = aircon_name;

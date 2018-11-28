@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.iop9i.airconplus">
-    
+
+    <!--블루투스 사용부분-->
     <permission android:name="android.permission.BLUETOOTH" />
     <permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
