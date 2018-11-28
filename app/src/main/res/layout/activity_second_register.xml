@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".SecondRegisterActivity">
 
     <LinearLayout
@@ -41,9 +40,9 @@
 
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:layout_gravity="center">
+                android:orientation="horizontal">
 
 
                 <TextView
@@ -66,16 +65,15 @@
 
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/airconText"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="bottom"
                     android:layout_marginRight="10dp"
                     android:background="@color/colorPrimary"
                     android:drawableStart="@drawable/ic_person_black_24dp"
@@ -85,6 +83,22 @@
                     android:textColor="#ffffff"
                     android:textColorHint="#ffffff" />
 
+                <EditText
+                    android:id="@+id/powerText"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_person_black_24dp"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:hint="표준전력량(kW)"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#ffffff"
+                    android:inputType="number"/>
+
             </LinearLayout>
 
             <Button
@@ -93,13 +107,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorButton_background"
+                android:background="@color/colorPrimaryDark"
                 android:text="등록"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-
 
 
         </LinearLayout>

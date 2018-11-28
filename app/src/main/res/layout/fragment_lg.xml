@@ -15,74 +15,56 @@ tools:context=".LgFragment">
 
     <TextView
         android:id="@+id/lgcrawling1"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="LG Smart ThinQ Wi Fi 연결방법(안드로이드용) "
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/lgcrawling2"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="LG Smart ThinQ Wi Fi 연결방법(아이폰 용) "
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/lgcrawling3"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="스마트 진단은 어떻게 하나요."
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/lgcrawling4"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="먼지 수치가 변하지 않아요."
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/lgcrawling5"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="ECO/나뭇잎이 뜨면서 냉기가 약해졌어요"
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
     <TextView
         android:id="@+id/lgcrawling6"
-        android:gravity="center"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
         android:text="냄새가 많이 나도 램프 색깔이 변하지 않아요."
-        android:background="@drawable/button_2"
+        android:background="#039BEE"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
@@ -91,25 +73,6 @@ tools:context=".LgFragment">
 
 
 </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="445dp"
-        android:layout_marginLeft="20dp">
-        <TextView
-            android:id="@+id/lgcrawling7"
-            android:layout_width="115dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
 
-            android:gravity="center"
-            android:text="더 보기"
-            android:background="@drawable/button_2"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp" />
-
-    </LinearLayout>
 
 </FrameLayout>

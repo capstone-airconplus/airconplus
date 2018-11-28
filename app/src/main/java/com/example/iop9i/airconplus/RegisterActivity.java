@@ -64,9 +64,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         // DatabaseReference myRef = database.child("text"); 여기에서 .child()는 데이터 위치의 이름을 정해줌
         // 이렇게도 사용이 가능하다.
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        //DatabaseReference myRef = database.getReference("message");
 
-        myRef.child("username").push().setValue("Hello, World!");
+        //myRef.child("username").push().setValue("Hello, World!");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -245,6 +245,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /* 이부분은 현재 email을 중복체크하는 부분인데
     validateButton를 이용하여 아이디 중복체크버튼으로 개발중 나중에 변경해야합니다
      */
+    /*
     private void sendEmailVerification() {
         // Disable button
         findViewById(R.id.validateButton).setEnabled(false);
@@ -276,6 +277,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         // [END send_email_verification]
     }
 
+*/
     private boolean validateForm() {
         boolean valid = true;
 

@@ -20,6 +20,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
@@ -27,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDB;
-    private DatabaseReference myRef;
+    //private DatabaseReference myRef;
 
     private EditText emailText;
     private EditText passwordText;
@@ -146,13 +149,17 @@ public class LoginActivity extends AppCompatActivity {
     // 로그인 성공시 DB에 정보를 업로드하는 함수
     public void dbUpload(){
 
+        DatabaseReference myRef = mDB.getReference();
+        /*
         LoginDTO loginDTO = new LoginDTO();
 
         loginDTO.UID = mAuth.getCurrentUser().getUid();
-        loginDTO.email = mAuth.getCurrentUser().getEmail();
-
-        myRef = mDB.getReference(loginDTO.UID);
-        myRef.setValue(loginDTO);
+        */
+        Map<String, Object> DBUpdate = new HashMap<>();
+        DBUpdate.put("current", mAuth.getCurrentUser().getUid());
+        myRef.updateChildren(DBUpdate);
+        //System.out.println("@@@@@@@@@@@여기 current값이 변하는지 확인하는 곳@@@@@@@@@@");
+        //System.out.println(myRef.child("current").toString());
 
     }
 }

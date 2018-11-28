@@ -32,7 +32,6 @@ public class WiniaFragment extends Fragment {
     private TextView winia_crawling4;
     private TextView winia_crawling5;
     private TextView winia_crawling6;
-    private TextView winia_crawling7;
 
 
 
@@ -89,7 +88,6 @@ public class WiniaFragment extends Fragment {
         winia_crawling4 = (TextView) v.findViewById (R.id.winiacrawling4);
         winia_crawling5 = (TextView) v.findViewById (R.id.winiacrawling5);
         winia_crawling6 = (TextView) v.findViewById (R.id.winiacrawling6);
-        winia_crawling7 = (TextView) v.findViewById (R.id.winiacrawling7);
 /*        new Crawling (samsung_crawling1).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
         new Crawling (samsung_crawling2).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
         new Crawling (samsung_crawling3).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
@@ -138,14 +136,6 @@ public class WiniaFragment extends Fragment {
 
         });
         winia_crawling6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myintent = new Intent (Intent.ACTION_VIEW, Uri.parse("https://www.winiasvc.co.kr/solution/faqList"));
-                startActivity (myintent);
-            }
-
-        });
-        winia_crawling7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myintent = new Intent (Intent.ACTION_VIEW, Uri.parse("https://www.winiasvc.co.kr/solution/faqList"));

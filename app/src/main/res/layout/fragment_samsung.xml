@@ -15,100 +15,62 @@
 
         <TextView
             android:id="@+id/samsungcrawling1"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="에어컨 냄새 제거 방법 및 청정 운전 문의"
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/samsungcrawling2"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="홈멀티 AF18J9975WWK 모델에 호환되는 벽걸이 모델 문의"
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/samsungcrawling3"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="냉방과 제습의 소비 전력량 차이는 얼마나 날까요?"
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/samsungcrawling4"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="삼성 에어컨 에러코드 점검사항 안내"
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/samsungcrawling5"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="찬바람이 아래는 시원한데, 위에는 덜 시원해요."
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
         <TextView
             android:id="@+id/samsungcrawling6"
-            android:gravity="center"
-            android:layout_width="380dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
             android:text="AF9500N 계열, 인공지능 청정 기능 사용 방법"
-            android:background="@drawable/button_2"
+            android:background="#039BEE"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
 
 
 
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="445dp"
-        android:layout_marginLeft="20dp">
-        <TextView
-            android:id="@+id/samsungcrawling7"
-            android:layout_width="115dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-
-            android:gravity="center"
-            android:text="더 보기"
-            android:background="@drawable/button_2"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp" />
 
     </LinearLayout>
 

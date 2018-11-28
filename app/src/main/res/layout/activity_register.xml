@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -38,40 +37,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-
+            <EditText
+                android:id="@+id/idText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="50dp"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:hint="아이디"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff" />
 
-
-                <EditText
-                    android:id="@+id/idText"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimary"
-                    android:drawableStart="@drawable/ic_person_black_24dp"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"
-                    android:hint="아이디"
-                    android:padding="10dp"
-                    android:textColor="#ffffff"
-                    android:textColorHint="#ffffff" />
-
-                <Button
-                    android:id="@+id/validateButton"
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@color/colorWarning"
-                    android:text="중복 체크"
-                    android:textColor="#ffffff"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
             <EditText
                 android:id="@+id/passwordText"
@@ -103,54 +82,17 @@
                 android:textColorHint="#ffffff" />
 
 
-            <LinearLayout
-
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center">
-
-
-                <EditText
-                    android:id="@+id/numberText"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimary"
-                    android:drawableStart="@drawable/ic_person_black_24dp"
-                    android:drawableLeft="@drawable/ic_person_black_24dp"
-                    android:hint="인증번호"
-                    android:padding="10dp"
-                    android:textColor="#ffffff"
-                    android:textColorHint="#ffffff" />
-
-                <Button
-                    android:id="@+id/certifyButton"
-                    android:layout_width="80dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@color/colorWarning"
-                    android:text="확인하기"
-                    android:textColor="#ffffff"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
             <Button
                 android:id="@+id/registerButton"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorButton_background"
+                android:background="@color/colorPrimaryDark"
                 android:text="가입하기"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-
 
 
         </LinearLayout>

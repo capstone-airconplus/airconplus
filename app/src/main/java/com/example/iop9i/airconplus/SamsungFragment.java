@@ -44,7 +44,6 @@ public class SamsungFragment extends Fragment {
     private TextView samsung_crawling4;
     private TextView samsung_crawling5;
     private TextView samsung_crawling6;
-    private TextView samsung_crawling7;
 
 
 
@@ -101,7 +100,6 @@ public class SamsungFragment extends Fragment {
         samsung_crawling4 = (TextView) v.findViewById (R.id.samsungcrawling4);
         samsung_crawling5 = (TextView) v.findViewById (R.id.samsungcrawling5);
         samsung_crawling6 = (TextView) v.findViewById (R.id.samsungcrawling6);
-        samsung_crawling7 = (TextView) v.findViewById (R.id.samsungcrawling7);
 /*        new Crawling (samsung_crawling1).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
         new Crawling (samsung_crawling2).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
         new Crawling (samsung_crawling3).execute ("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&faq=NODE0000124944&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc","strong[class=lst_tit]");
@@ -153,14 +151,6 @@ public class SamsungFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent myintent = new Intent (Intent.ACTION_VIEW, Uri.parse("https://www.samsungsvc.co.kr/online/faqView.do?domainId=NODE0000033866&node_Id=NODE0000145783&faqId=KNOW0000039305&pageNo=1&Lcode=%BB%FD%C8%B0%B0%A1%C0%FC&code=S021&selectCtgrCodeFAQ=NODE0000145783&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC"));
-                startActivity (myintent);
-            }
-
-        });
-        samsung_crawling7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myintent = new Intent (Intent.ACTION_VIEW, Uri.parse("https://www.samsungsvc.co.kr/online/faqList.do?pageNo=1&page=1&searchOrder=PAGE_CREATED_DATE_DESC&Lcode=&faq=&video=&download=&diagnosis=&coreword2=%BD%BA%C5%C4%B5%E5+%BF%A1%BE%EE%C4%C1&coreword1=%BF%A1%BE%EE%C4%C1&code=S021&searchTarget=&selectCtgrCodeFAQ=NODE0000145783&presearchTarget=&selectCtgrCodeDIAGNOSIS=NODE0000125081&selectCtgrCodeVIDEO=NODE0000125157&selectCtgrCodeDOWNLOAD=CAC&anchorG=Y&q=&w=srch_faq&sq=&vsq=&dsort=&fsort=&oneCode=&pg=&onSrch=&faqListOrderBy=&d1=&d2=#anc"));
                 startActivity (myintent);
             }
 

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:background="@drawable/background"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/fourth_layout_linearlayout">
 
 
@@ -21,9 +18,9 @@
             android:id="@+id/samsungButton"
             android:text="삼성"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:background="@color/colorButton_background"
+            android:background="@color/colorPrimary"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"/>
         <Button
@@ -33,9 +30,9 @@
             android:id="@+id/lgButton"
             android:text="엘지"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:background="@color/colorButton_background"
+            android:background="@color/colorPrimary"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"/>
         <Button
@@ -45,9 +42,9 @@
             android:id="@+id/winiaButton"
             android:text="위니아"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:background="@color/colorButton_background"
+            android:background="@color/colorPrimary"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"/>
@@ -68,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:background="@drawable/setting_background"
+                android:background="@color/colorPrimary"
                 android:layout_marginTop="8dp">
                 <ImageView
                     android:layout_width="125dp"
@@ -88,36 +85,16 @@
                     android:layout_marginTop="10dp"
                     />
 
-
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="8dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:text="- QnA 페이지는 에어컨 사용에 있어 자주묻는 질문"/>
-
-            </LinearLayout>
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/fragment">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
         </RelativeLayout>
 
-
     </FrameLayout>
-
 
 </LinearLayout>

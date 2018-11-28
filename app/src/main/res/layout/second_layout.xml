@@ -1,66 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
-        android:text="전력량과 전기세"
-        android:textColor="@color/colorPrimary"
-        android:textSize="25dp"/>
+        android:layout_height="wrap_content" />
 
-    <com.github.mikephil.charting.charts.BarChart
+    <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
-        android:layout_width="380dp"
+        android:layout_width="366dp"
         android:layout_height="210dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="114dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/nextButton"
-            android:text="다음"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:background="@color/colorButton_background"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/previousButton"
-            android:text="이전"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:background="@color/colorButton_background"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"/>
-
-
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="38dp" />
 </RelativeLayout>
