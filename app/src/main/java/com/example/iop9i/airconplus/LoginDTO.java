@@ -6,7 +6,7 @@ public class LoginDTO {
     String UID;
     String email;
     String aircon_name;
-    double aircon_power;  // 표준전력량
+    float aircon_power;  // 표준전력량
     double indoor_temp;  // 내부 온도
     double indoor_hum;  // 내부 습도(humidity)
     double outdoor_temp;  // 외부 온도
@@ -17,7 +17,7 @@ public class LoginDTO {
 
     public LoginDTO(){}
 
-    public LoginDTO(String UID, String email, String aircon_name, double aircon_power, double indoor_temp, double indoor_hum,
+    public LoginDTO(String UID, String email, String aircon_name, float aircon_power, double indoor_temp, double indoor_hum,
                     double outdoor_hum, double outdoor_temp, double using_time, double elec_fee, double on){
         this.UID = UID;
         this.email = email;

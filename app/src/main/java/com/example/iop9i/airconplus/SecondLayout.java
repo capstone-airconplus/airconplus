@@ -50,7 +50,6 @@ public class SecondLayout extends Fragment {
     DatabaseReference mRef = mDB.getReference().getRoot();
     LoginDTO loginDTO = new LoginDTO();
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

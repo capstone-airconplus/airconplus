@@ -18,7 +18,7 @@ public class SecondRegisterActivity extends AppCompatActivity {
     private EditText ariconText;
     private EditText powerText;
     private String email;
-    private double string_power;
+    private float string_power;
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -52,7 +52,7 @@ public class SecondRegisterActivity extends AppCompatActivity {
 
                 // 로그인 이전에 DB에 userUID를 만들어 그 하위에 에어컨 정보와 email 새로 만든다.
                 // 표준전력량 textview의 내용을 double로 변경하고 그값을 string_power로 받아서 db업로드의 파라메터로 사용한다.
-                string_power = Double.parseDouble(powerText.getText().toString());
+                string_power = Float.parseFloat(powerText.getText().toString());
                 System.out.println("@@@@@@@@@@@@@"+string_power);
                 dbUpload(ariconText.getText().toString(), string_power);
 
@@ -65,7 +65,7 @@ public class SecondRegisterActivity extends AppCompatActivity {
     }
 
 
-    public void dbUpload(String aircon_name, double aircon_power){
+    public void dbUpload(String aircon_name, float aircon_power){
         LoginDTO loginDTO = new LoginDTO();
 
         loginDTO.UID = mAuth.getCurrentUser().getUid();
