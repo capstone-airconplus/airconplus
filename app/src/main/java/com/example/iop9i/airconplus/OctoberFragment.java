@@ -1,103 +1,100 @@
 package com.example.iop9i.airconplus;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
-
-public class SecondLayout extends Fragment {
-    View v;
 
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link OctoberFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link OctoberFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class OctoberFragment extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private View v;
     private BarChart barChart;
     private Button next_Btn;
     private Button previous_Btn;
-    private LinearLayout notice_second;
-    FirebaseDatabase mDB = FirebaseDatabase.getInstance();
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    DatabaseReference mRef = mDB.getReference().getRoot();
-    LoginDTO loginDTO = new LoginDTO();
 
+    private OnFragmentInteractionListener mListener;
+
+    public OctoberFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment OctoberFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static OctoberFragment newInstance(String param1, String param2) {
+        OctoberFragment fragment = new OctoberFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("@@@@@@@@@@@@@@@oncreate 잘되지?@@@@@@@@");
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        v= inflater.inflate(R.layout.fragment_october, container, false);
 
-        System.out.println(mAuth.getUid());
-        System.out.println("세컨드 레이아웃 잘찍히지?@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-
-        // get db test
-        mRef.child(mAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                loginDTO = dataSnapshot.getValue(LoginDTO.class);
-                System.out.println("@@@@@DB 잘 들어갔나요??@@@@@@@@@@@@@@");
-                System.out.println(loginDTO.aircon_name);
-                System.out.println(loginDTO.indoor_temp);
-
-                for(DataSnapshot DBchange : dataSnapshot.getChildren()){
-                    System.out.println(DBchange.getValue());
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println( " 여기 에러 나왔엉 @@@@@@@@@@@@@@@@@@@@@@@@@@@");
-            }
-        });
-
-
-        // loginDTO.indoor_temp
-        v = inflater.inflate (R.layout.second_layout, container, false);
-
-        previous_Btn = (Button) v.findViewById(R.id.previous_nov_Button);
-        next_Btn = (Button) v.findViewById(R.id.next_nov_Button);
-        notice_second = (LinearLayout)v.findViewById (R.id.notice_2);
+        previous_Btn = (Button) v.findViewById(R.id.previous_oct_Button);
+        next_Btn = (Button) v.findViewById(R.id.next_oct_Button);
+        barChart = (BarChart)v.findViewById(R.id.octoberchart);
 
         previous_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                notice_second.setVisibility(View.GONE);
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_2, new OctoberFragment());
+                fragmentTransaction.replace(R.id.fragment_2, new NovemberFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -105,17 +102,13 @@ public class SecondLayout extends Fragment {
         next_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                notice_second.setVisibility (View.GONE);
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
-                fragmentTransaction.replace (R.id.fragment_2, new DecemberFragment());
+                fragmentTransaction.replace (R.id.fragment_2, new NovemberFragment());
                 fragmentTransaction.commit ();
 
             }
         });
-
-
-        barChart = (BarChart)v.findViewById(R.id.novemberchart);
 
         ArrayList<BarEntry> entries = new ArrayList<> (); //전력량 그래프
         entries.add(new BarEntry(1, 3));
@@ -240,5 +233,34 @@ public class SecondLayout extends Fragment {
         barChart.invalidate();
 
         return v;
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }
