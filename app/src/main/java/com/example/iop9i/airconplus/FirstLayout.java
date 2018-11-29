@@ -33,7 +33,7 @@ import static android.app.Activity.RESULT_CANCELED;
 public class FirstLayout extends Fragment {
     private static final int REQUEST_ENABLE_BT = 100;
     private String mConnectedDeviceName = null;
-    ConnectedTask mConnectedTask = null;
+    //ConnectedTask mConnectedTask = null;
     View v;
 
     TextView bluetoothText;
@@ -50,7 +50,7 @@ public class FirstLayout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         v = inflater.inflate (R.layout.first_layout, container, false);
-
+/*
         bluetoothText = (TextView)v.findViewById(R.id.bluetooth_text);
 
         String sendMessage = mAuth.getCurrentUser().getUid();
@@ -70,12 +70,12 @@ public class FirstLayout extends Fragment {
             Log.d(TAG, "Initialisation successful.");
 
             showPairedDevicesListDialog();
-        }
+        }*/
 
         return v;
     }
 
-
+/*
     // 이부분도 블루투스 소켓 통신 부분
     private class ConnectTask extends AsyncTask<Void, Void, Boolean> {
 
@@ -352,5 +352,5 @@ public class FirstLayout extends Fragment {
             }
         });
         builder.create().show();
-    }
+    }*/
 }

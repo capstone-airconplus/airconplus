@@ -61,20 +61,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="2018년 10월"
+            android:text="                                      전기세"
             android:textColor="@color/colorPrimary"
-            android:textSize="25dp"/>
+            android:textSize="20dp"/>
 
 
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/octoberchart"
+        android:id="@+id/octoberchart_money"
         android:layout_width="380dp"
         android:layout_height="210dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="124dp" />
+        android:layout_marginTop="104dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="                                    사용시간"
+        android:layout_marginTop="320dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/octoberchart_time"
+        android:layout_width="380dp"
+        android:layout_height="210dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="334dp" />
 
 </FrameLayout>

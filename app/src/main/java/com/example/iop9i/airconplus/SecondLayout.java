@@ -41,6 +41,7 @@ public class SecondLayout extends Fragment {
 
 
     private BarChart barChart;
+    private BarChart barChart_2;
     private Button next_Btn;
     private Button previous_Btn;
     private LinearLayout notice_second;
@@ -115,9 +116,11 @@ public class SecondLayout extends Fragment {
         });
 
 
-        barChart = (BarChart)v.findViewById(R.id.novemberchart);
+        barChart = (BarChart)v.findViewById(R.id.novemberchart_money);
 
-        ArrayList<BarEntry> entries = new ArrayList<> (); //전력량 그래프
+        barChart_2 = (BarChart)v.findViewById(R.id.novemberchart_time);
+
+        ArrayList<BarEntry> entries = new ArrayList<> (); //총 전기세
         entries.add(new BarEntry(1, 3));
         entries.add(new BarEntry(2, 4));
         entries.add(new BarEntry(3, 3));
@@ -150,9 +153,8 @@ public class SecondLayout extends Fragment {
         entries.add(new BarEntry(28, 4));
         entries.add(new BarEntry(29, 3));
         entries.add(new BarEntry(30, 0));
-        entries.add(new BarEntry(31, 4));
 
-        BarDataSet barDataSet = new BarDataSet(entries, "전력량");//속성 이름
+        BarDataSet barDataSet = new BarDataSet(entries, "전기세");//속성 이름
         //lineDataSet.setLineWidth(2);
         //lineDataSet.setCircleRadius(4); // 그래프에서 꼭지점 원 크기
         //barDataSet.setCircleColor(Color.parseColor("#FFA1B4DC"));
@@ -165,7 +167,7 @@ public class SecondLayout extends Fragment {
         barDataSet.setDrawValues(false);
 
 
-        ArrayList<BarEntry> entries_2 = new ArrayList<> (); //전력량 그래프
+        ArrayList<BarEntry> entries_2 = new ArrayList<> (); //감면된 전기세 그래프
         entries_2.add(new BarEntry(1, 0));
         entries_2.add(new BarEntry(2, 1/2));
         entries_2.add(new BarEntry(3, 5));
@@ -196,9 +198,8 @@ public class SecondLayout extends Fragment {
         entries_2.add(new BarEntry(28, 1));
         entries_2.add(new BarEntry(29, 1));
         entries_2.add(new BarEntry(30, 1));
-        entries_2.add(new BarEntry(31, 1));
 
-        BarDataSet barDataSet_2 = new BarDataSet(entries_2, "전기세");//속성 이름
+        BarDataSet barDataSet_2 = new BarDataSet(entries_2, "감면된 전기세");//속성 이름
 
         //barDataSet_2.setLineWidth(2);
         //barDataSet_2.setCircleRadius(4); // 그래프에서 꼭지점 원 크기
@@ -211,9 +212,56 @@ public class SecondLayout extends Fragment {
         //barDataSet_2.setDrawHighlightIndicators(false);
         barDataSet_2.setDrawValues(false);
 
-        BarData barData = new BarData(barDataSet, barDataSet_2);
-        barChart.setData (barData);
+        ArrayList<BarEntry> entries_3 = new ArrayList<> (); //사용시간
+        entries_3.add(new BarEntry(1, 0));
+        entries_3.add(new BarEntry(2, 1/2));
+        entries_3.add(new BarEntry(3, 5));
+        entries_3.add(new BarEntry(4, 1));
+        entries_3.add(new BarEntry(5, 2));
+        entries_3.add(new BarEntry(6, 1));
+        entries_3.add(new BarEntry(7, 2));
+        entries_3.add(new BarEntry(8, 0));
+        entries_3.add(new BarEntry(9, 1));
+        entries_3.add(new BarEntry(10, 1));
+        entries_3.add(new BarEntry(11, 1));
+        entries_3.add(new BarEntry(12, 1));
+        entries_3.add(new BarEntry(13, 1));
+        entries_3.add(new BarEntry(14, 1));
+        entries_3.add(new BarEntry(15, 1));
+        entries_3.add(new BarEntry(16, 1));
+        entries_3.add(new BarEntry(17, 1));
+        entries_3.add(new BarEntry(18, 1));
+        entries_3.add(new BarEntry(19, 1));
+        entries_3.add(new BarEntry(20, 1));
+        entries_3.add(new BarEntry(21, 1));
+        entries_3.add(new BarEntry(22, 1));
+        entries_3.add(new BarEntry(23, 1));
+        entries_3.add(new BarEntry(24, 1));
+        entries_3.add(new BarEntry(25, 1));
+        entries_3.add(new BarEntry(26, 1));
+        entries_3.add(new BarEntry(27, 1));
+        entries_3.add(new BarEntry(28, 1));
+        entries_3.add(new BarEntry(29, 1));
+        entries_3.add(new BarEntry(30, 1));
 
+        BarDataSet barDataSet_3 = new BarDataSet(entries_3, "사용시간");//속성 이름
+
+        //barDataSet_2.setLineWidth(2);
+        //barDataSet_2.setCircleRadius(4); // 그래프에서 꼭지점 원 크기
+        //barDataSet_2.setCircleColor(Color.parseColor("#ffee58"));
+        //barDataSet_2.setCircleColorHole(Color.YELLOW);
+        barDataSet_3.setColor(Color.parseColor("#ffee58"));
+        //barDataSet_2.setDrawCircleHole(true);
+        //barDataSet_2.setDrawCircles(true);
+        //barDataSet_2.setDrawHorizontalHighlightIndicator(false);
+        //barDataSet_2.setDrawHighlightIndicators(false);
+        barDataSet_3.setDrawValues(false);
+
+        BarData barData = new BarData(barDataSet, barDataSet_2);
+        BarData barData_2 = new BarData(barDataSet_3);
+
+        barChart.setData (barData);
+        barChart_2.setData (barData_2);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -238,6 +286,30 @@ public class SecondLayout extends Fragment {
         barChart.setDescription(description);
         barChart.animateY(2000, Easing.EasingOption.EaseInCubic);
         barChart.invalidate();
+
+        XAxis xAxis_2 = barChart_2.getXAxis();
+        xAxis_2.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis_2.setTextColor(Color.BLACK);
+        xAxis_2.enableGridDashedLine(8, 24, 0);
+
+
+        YAxis yLAxis_2 = barChart_2.getAxisLeft();
+        yLAxis_2.setTextColor(Color.BLACK);
+
+
+        YAxis yRAxis_2 = barChart_2.getAxisRight();
+        yRAxis_2.setDrawLabels(false);
+        yRAxis_2.setDrawAxisLine(false);
+        yRAxis_2.setDrawGridLines(false);
+
+        Description description_2 = new Description();
+        description_2.setText("");
+
+        barChart_2.setDoubleTapToZoomEnabled(false);
+        barChart_2.setDrawGridBackground(false);
+        barChart_2.setDescription(description_2);
+        barChart_2.animateY(2000, Easing.EasingOption.EaseInCubic);
+        barChart_2.invalidate();
 
         return v;
     }
