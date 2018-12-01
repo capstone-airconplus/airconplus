@@ -63,6 +63,8 @@ public class NovemberFragment extends Fragment {
     FirebaseDatabase mDB = FirebaseDatabase.getInstance();
     DatabaseReference mRef = mDB.getReference();
     LoginDTO loginDTO = new LoginDTO();
+
+    eachFunction each = new eachFunction();
     // 선언 완료
 
     // 사용할 변수들 선언
@@ -70,8 +72,8 @@ public class NovemberFragment extends Fragment {
 //    double day11;double day12;double day13;double day14;double day15;double day16;double day17;double day18;double day19;double day20;
 //    double day21;double day22;double day23;double day24;double day25;double day26;double day27;double day28;double day29;double day30;
 //    double day31;
-    float[] fl_day = new float[32];  // DB에서 day의 use를 넣는 float형 list
-    float[] fl_reduction = new float[32];  // DB에서 day의 reduction를 넣느 float형 list
+    //float[] fl_day = new float[32];  // DB에서 day의 use를 넣는 float형 list
+    //float[] fl_reduction = new float[32];  // DB에서 day의 reduction를 넣느 float형 list
 
     String str_day;
     String str_red;
@@ -92,6 +94,10 @@ public class NovemberFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static NovemberFragment newInstance(String param1, String param2) {
+
+        // 이곳이 1순위일거 같음
+        System.out.println("###########이곳이 1순위가 맞지요?#####################");
+
         NovemberFragment fragment = new NovemberFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -103,6 +109,7 @@ public class NovemberFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -148,92 +155,46 @@ public class NovemberFragment extends Fragment {
         // 전력량 그래프 사용시간 * 표준전력량
         final ArrayList<BarEntry> entries = new ArrayList<> (); //전력량 그래프
 
+        entries.add(new BarEntry(1, 3*1000));
+        System.out.println("###엔트리 확인하는 부분##########################");
         System.out.println(entries);
-        // test
-        // 이부분이 실행 될 때마다 DB의 새로운 값으로 갱신
-        mRef.child(mAuth.getUid()).child("use_power").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(int p=0; p<31; p++){
-                    // day를 받아옴.
-                    int getintday = p+1;
-                    getday = Integer.toString(getintday);
-                    // 만약 사용안한 날이 있는지 체크하기 위해서
-                    if(dataSnapshot.child("2018-11").child(getday).child("use").getValue() == null){
-                        // 사용안한 날은 defalt 값을 0으로 초기화
-                        str_day = "0";
-                        str_red = "0";
-                    }else{
-                        str_day = dataSnapshot.child("2018-11").child(getday).child("use").getValue().toString();
-                        str_red = dataSnapshot.child("2018-11").child(getday).child("reduction").getValue().toString();
-                    }
-                    //System.out.println(str_day);
-                    System.out.println("#####" + getday + "####################");
-                    fl_day[p] = Float.parseFloat(str_day);
-                    System.out.println(fl_day[p]);
-                    fl_reduction[p] = Float.parseFloat(str_red);
-                    System.out.println(fl_reduction[p]);
-
-                    // 엔트리에 추가
-                    //float usingpower = fl_day[p] * loginDTO.aircon_power;
-                    entries.add(new BarEntry(p+1, fl_day[p] * loginDTO.aircon_power));
-                    System.out.println(entries);
-                }
-                System.out.println("여기는 잘 나오나?");
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println("데이터스냅샷 에러나서 이런거다 이말이야.");
-            }
-        });
-        // Error 체크 구간 1
-        System.out.println("Error 체크구간1 : 이곳이 에러인가요?");
-
-        // 갱신 완료
-
-//        // 31일 까지니까 i<32
-//        for(int i = 1; i <32; i++){
-//            float usingpower = fl_day[i] * loginDTO.aircon_power;
-//            System.out.println("#####" + getday + "####################");
-//            System.out.println(usingpower);
-//            entries.add(new BarEntry(i, usingpower));
-//        }
-
-        /*
-        entries.add(new BarEntry(1, fl_day[1]));
-        entries.add(new BarEntry(2, 4));
-        entries.add(new BarEntry(3, 3));
-        entries.add(new BarEntry(4, 4));
-        entries.add(new BarEntry(5, 5));
-        entries.add(new BarEntry(6, 6));
-        entries.add(new BarEntry(7, 7));
-        entries.add(new BarEntry(8, 8));
-        entries.add(new BarEntry(7, 9));
-        entries.add(new BarEntry(8, 10));
-        entries.add(new BarEntry(9, 1));
-        entries.add(new BarEntry(10, 2));
+        System.out.println("###엔트리 확인 완료###############################");
+        try {
+            System.out.println(each.get_fl_day(1));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        entries.add(new BarEntry(2, 2*1000));
+        entries.add(new BarEntry(3, 0));
+        entries.add(new BarEntry(4, 0));
+        entries.add(new BarEntry(5, 0));
+        entries.add(new BarEntry(6, 0));
+        entries.add(new BarEntry(7, 0));
+        entries.add(new BarEntry(8, (float)4.2*1000));
+        entries.add(new BarEntry(9, 0));
+        entries.add(new BarEntry(10, 0));
         entries.add(new BarEntry(11, 0));
-        entries.add(new BarEntry(12, 4));
-        entries.add(new BarEntry(13, 3));
-        entries.add(new BarEntry(14, 0));
-        entries.add(new BarEntry(15, 4));
-        entries.add(new BarEntry(16, 3));
-        entries.add(new BarEntry(17, 1));
-        entries.add(new BarEntry(18, 2));
+        entries.add(new BarEntry(12, 0));
+        entries.add(new BarEntry(13, 0));
+        entries.add(new BarEntry(14, (float)2.3*1000));
+        entries.add(new BarEntry(15, 0));
+        entries.add(new BarEntry(16, 0));
+        entries.add(new BarEntry(17, 0));
+        entries.add(new BarEntry(18, 7*1000));
         entries.add(new BarEntry(19, 0));
-        entries.add(new BarEntry(20, 4));
-        entries.add(new BarEntry(21, 3));
+        entries.add(new BarEntry(20, 0));
+        entries.add(new BarEntry(21, 0));
         entries.add(new BarEntry(22, 0));
-        entries.add(new BarEntry(23, 4));
-        entries.add(new BarEntry(24, 3));
-        entries.add(new BarEntry(25, 1));
-        entries.add(new BarEntry(26, 2));
+        entries.add(new BarEntry(23, 4*1000));
+        entries.add(new BarEntry(24, 0));
+        entries.add(new BarEntry(25, 0));
+        entries.add(new BarEntry(26, 0));
         entries.add(new BarEntry(27, 0));
-        entries.add(new BarEntry(28, 4));
-        entries.add(new BarEntry(29, 3));
-        entries.add(new BarEntry(30, 0));
-        entries.add(new BarEntry(31, 4));
-        */
+        entries.add(new BarEntry(28, 8*1000));
+        entries.add(new BarEntry(29, 0));
+        entries.add(new BarEntry(30, 10*1000));
+        entries.add(new BarEntry(31, 0));
+
 
         BarDataSet barDataSet = new BarDataSet(entries, "전력량");//속성 이름
         //lineDataSet.setLineWidth(2);
@@ -256,43 +217,38 @@ public class NovemberFragment extends Fragment {
 
         // 절감된 전력량 DB에서 reduction
         ArrayList<BarEntry> entries_2 = new ArrayList<> (); //전력량 그래프
-        // 11월은 31일까지니까 i<32
-        for(int i = 1; i <32; i++){
-            entries.add(new BarEntry(i, fl_reduction[i]));
-        }
-        /*
-        entries_2.add(new BarEntry(1, 0));
-        entries_2.add(new BarEntry(2, 1/2));
-        entries_2.add(new BarEntry(3, 5));
-        entries_2.add(new BarEntry(4, 1));
-        entries_2.add(new BarEntry(5, 2));
-        entries_2.add(new BarEntry(6, 1));
-        entries_2.add(new BarEntry(7, 2));
-        entries_2.add(new BarEntry(8, 0));
-        entries_2.add(new BarEntry(9, 1));
-        entries_2.add(new BarEntry(10, 1));
-        entries_2.add(new BarEntry(11, 1));
-        entries_2.add(new BarEntry(12, 1));
-        entries_2.add(new BarEntry(13, 1));
-        entries_2.add(new BarEntry(14, 1));
-        entries_2.add(new BarEntry(15, 1));
-        entries_2.add(new BarEntry(16, 1));
-        entries_2.add(new BarEntry(17, 1));
-        entries_2.add(new BarEntry(18, 1));
-        entries_2.add(new BarEntry(19, 1));
-        entries_2.add(new BarEntry(20, 1));
-        entries_2.add(new BarEntry(21, 1));
-        entries_2.add(new BarEntry(22, 1));
-        entries_2.add(new BarEntry(23, 1));
-        entries_2.add(new BarEntry(24, 1));
-        entries_2.add(new BarEntry(25, 1));
-        entries_2.add(new BarEntry(26, 1));
-        entries_2.add(new BarEntry(27, 1));
-        entries_2.add(new BarEntry(28, 1));
-        entries_2.add(new BarEntry(29, 1));
-        entries_2.add(new BarEntry(30, 1));
-        entries_2.add(new BarEntry(31, 1));
-        */
+
+        entries_2.add(new BarEntry(1, 250));
+        entries_2.add(new BarEntry(2, 178));
+        entries_2.add(new BarEntry(3, 0));
+        entries_2.add(new BarEntry(4, 0));
+        entries_2.add(new BarEntry(5, 0));
+        entries_2.add(new BarEntry(6, 0));
+        entries_2.add(new BarEntry(7, 0));
+        entries_2.add(new BarEntry(8, 356));
+        entries_2.add(new BarEntry(9, 0));
+        entries_2.add(new BarEntry(10, 0));
+        entries_2.add(new BarEntry(11, 0));
+        entries_2.add(new BarEntry(12, 0));
+        entries_2.add(new BarEntry(13, 0));
+        entries_2.add(new BarEntry(14, 178));
+        entries_2.add(new BarEntry(15, 0));
+        entries_2.add(new BarEntry(16, 0));
+        entries_2.add(new BarEntry(17, 0));
+        entries_2.add(new BarEntry(18, 631));
+        entries_2.add(new BarEntry(19, 0));
+        entries_2.add(new BarEntry(20, 0));
+        entries_2.add(new BarEntry(21, 0));
+        entries_2.add(new BarEntry(22, 0));
+        entries_2.add(new BarEntry(23, 345));
+        entries_2.add(new BarEntry(24, 0));
+        entries_2.add(new BarEntry(25, 0));
+        entries_2.add(new BarEntry(26, 0));
+        entries_2.add(new BarEntry(27, 0));
+        entries_2.add(new BarEntry(28, 764));
+        entries_2.add(new BarEntry(29, 0));
+        entries_2.add(new BarEntry(30, 955));
+        entries_2.add(new BarEntry(31, 0));
 
         BarDataSet barDataSet_2 = new BarDataSet(entries_2, "전기세");//속성 이름
 
