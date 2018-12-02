@@ -55,13 +55,12 @@ public class NovemberFragment extends Fragment {
     private BarChart barChart_2;
     private Button next_Btn;
     private Button previous_Btn;
+    DatabaseReference mRoot = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mDB = mRoot.child("qi698BDarUgd2ERe1zLOr1GMx4D3").child("use_power").child("2018-11");
 
     private OnFragmentInteractionListener mListener;
 
     // DB에서 값을 받아오기 위해서 파이어베이스 선언
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    FirebaseDatabase mDB = FirebaseDatabase.getInstance();
-    DatabaseReference mRef = mDB.getReference();
     LoginDTO loginDTO = new LoginDTO();
 
     eachFunction each = new eachFunction();
@@ -75,8 +74,8 @@ public class NovemberFragment extends Fragment {
     //float[] fl_day = new float[32];  // DB에서 day의 use를 넣는 float형 list
     //float[] fl_reduction = new float[32];  // DB에서 day의 reduction를 넣느 float형 list
 
-    String str_day;
-    String str_red;
+    Integer str_day;
+    Integer str_red;
 
     String getday;
     // 변수 선언 완료
@@ -151,9 +150,37 @@ public class NovemberFragment extends Fragment {
             }
         });
 
-
         // 전력량 그래프 사용시간 * 표준전력량
         final ArrayList<BarEntry> entries = new ArrayList<> (); //전력량 그래프
+/*
+        mDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(int p=1; p<31; p++){
+                    if(dataSnapshot.child(String.valueOf(p)).child("use").getValue(Integer.class) == null){
+                        // 사용안한 날은 defalt 값을 0으로 초기화
+                        str_day = 0;
+                        str_red = 0;
+                    }else{
+                        str_day = dataSnapshot.child(String.valueOf(p)).child("use").getValue(Integer.class);
+                        str_red = dataSnapshot.child(String.valueOf(p)).child("reduction").getValue(Integer.class);
+                    }
+                    entries.add(new BarEntry(p, str_day));
+                }
+                //Integer reduction = dataSnapshot.child("1").child("reduction").getValue(Integer.class);
+                //System.out.println(reduction+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@weqe");
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        */
+
+
 
         entries.add(new BarEntry(1, 3*1000));
         System.out.println("###엔트리 확인하는 부분##########################");

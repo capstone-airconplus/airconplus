@@ -21,6 +21,11 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,7 +47,15 @@ public class FirstLayout extends Fragment {
     private static final String TAG = "BluetoothClient";
     private ArrayAdapter<String> mConversationArrayAdapter;
 
-    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private TextView textView_intemp;
+    private TextView textView_outtemp;
+    private TextView textView_inhum;
+    private TextView textView_outhum;
+
+    DatabaseReference mRoot = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mDB = mRoot.child("qi698BDarUgd2ERe1zLOr1GMx4D3");
+
+
 
 
     @Nullable
@@ -50,6 +63,36 @@ public class FirstLayout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         v = inflater.inflate (R.layout.first_layout, container, false);
+        textView_intemp = (TextView)v.findViewById(R.id.textView4);
+        textView_outtemp = (TextView)v.findViewById(R.id.textView7);
+        textView_inhum = (TextView)v.findViewById(R.id.textView5);
+        textView_outhum = (TextView)v.findViewById(R.id.textView8);
+
+
+        mDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Integer temp_in = dataSnapshot.child("indoor_temp").getValue(Integer.class);
+                Integer temp_out = dataSnapshot.child("outdoor_fan_temp").getValue(Integer.class);
+                Integer hum_in = dataSnapshot.child("indoor_hum").getValue(Integer.class);
+                Integer hum_out = dataSnapshot.child("outdoor_fan_hum").getValue(Integer.class);
+                String temp_in2 = String.valueOf(temp_in);
+                String temp_out2 = String.valueOf(temp_out);
+                String hum_in2 = String.valueOf(hum_in);
+                String hum_out2 = String.valueOf(hum_out);
+                textView_intemp.setText(temp_in2+"º");
+                textView_outtemp.setText(temp_out2+"º");
+                textView_inhum.setText(hum_in2+"%");
+                textView_outhum.setText(hum_out2+"%");
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 /*
         bluetoothText = (TextView)v.findViewById(R.id.bluetooth_text);
 
@@ -71,9 +114,27 @@ public class FirstLayout extends Fragment {
 
             showPairedDevicesListDialog();
         }*/
+/*
+        mDB.getReference().child("qi698BDarUgd2ERe1zLOr1GMx4D3").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println("@@@@@@@@@@@@@@@@@@@@@@@222222222222");
+                Double d1 = (Double) dataSnapshot.child("indoor_temp").getValue();
+                System.out.println(d1);
 
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+*/
         return v;
     }
+
+
 
 /*
     // 이부분도 블루투스 소켓 통신 부분
@@ -354,3 +415,4 @@ public class FirstLayout extends Fragment {
         builder.create().show();
     }*/
 }
+
