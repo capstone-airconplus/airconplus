@@ -59,8 +59,10 @@ public class FirstLayout extends Fragment {
     private TextView textView_wind_gentle;
     private ImageView imageView_ice;
     private ImageView imageView_dehum;
+    private ImageView imageView_power;
     String strColor = "#546E7A";
     String strColor_2 = "#4fc3f7";
+    String strColor_3 = "#aed581";
 
 
     DatabaseReference mRoot = FirebaseDatabase.getInstance().getReference();
@@ -83,6 +85,7 @@ public class FirstLayout extends Fragment {
         textView_wind_gentle = (TextView)v.findViewById(R.id.wind_gentle);
         imageView_ice = (ImageView)v.findViewById(R.id.image_ice);
         imageView_dehum = (ImageView)v.findViewById(R.id.image_dehum);
+        imageView_power = (ImageView)v.findViewById(R.id.image_power);
 
 
         mDB.addValueEventListener(new ValueEventListener() {
@@ -92,6 +95,8 @@ public class FirstLayout extends Fragment {
                 Integer temp_out = dataSnapshot.child("outdoor_fan_temp").getValue(Integer.class);
                 Integer hum_in = dataSnapshot.child("indoor_hum").getValue(Integer.class);
                 Integer hum_out = dataSnapshot.child("outdoor_fan_hum").getValue(Integer.class);
+
+                Integer power = dataSnapshot.child("on").getValue(Integer.class);
                 String temp_in2 = String.valueOf(temp_in);
                 String temp_out2 = String.valueOf(temp_out);
                 String hum_in2 = String.valueOf(hum_in);
@@ -120,6 +125,9 @@ public class FirstLayout extends Fragment {
                 }else{
                     imageView_dehum.setColorFilter(Color.parseColor(strColor));
                     imageView_ice.setColorFilter(Color.parseColor(strColor_2));
+                }
+                if(power==1){
+                    imageView_power.setColorFilter(Color.parseColor(strColor_3));
                 }
 
             }
