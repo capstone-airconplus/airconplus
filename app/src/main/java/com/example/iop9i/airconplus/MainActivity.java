@@ -194,4 +194,23 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer (GravityCompat.START);
         return true;
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        System.out.println("여기는 mainactivity의 onsaveinstance입니다.");
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        System.out.println("여기는 mainActivity의 onrestore 입니다 이곳을 다시 실행시키고 싶어요");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("여기는 mianactivity의 resume입니다");
+    }
 }

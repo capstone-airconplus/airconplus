@@ -35,6 +35,19 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailText;
     private EditText passwordText;
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        System.out.println("======saveInstance==============");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("=========onRestart=========");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
