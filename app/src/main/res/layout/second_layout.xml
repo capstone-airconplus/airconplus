@@ -23,7 +23,7 @@
 
 
 
-            <include layout="@layout/fragment_november"></include>
+            <include layout="@layout/fragment_december"></include>
                 <!--<com.github.mikephil.charting.charts.BarChart-->
                     <!--android:id="@+id/chart"-->
                     <!--android:layout_width="380dp"-->

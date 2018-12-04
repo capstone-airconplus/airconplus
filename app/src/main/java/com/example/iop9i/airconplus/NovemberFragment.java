@@ -220,7 +220,6 @@ public class NovemberFragment extends Fragment {
         entries.add(new BarEntry(28, 8*1000));
         entries.add(new BarEntry(29, 0));
         entries.add(new BarEntry(30, 10*1000));
-        entries.add(new BarEntry(31, 0));
 
 
         BarDataSet barDataSet = new BarDataSet(entries, "전력량");//속성 이름
@@ -233,7 +232,7 @@ public class NovemberFragment extends Fragment {
         //barDataSet.setDrawCircles(true);
         //barDataSet.setDrawHorizontalHighlightIndicator(false);
         //barDataSet.setDrawHighlightIndicators(false);
-        barDataSet.setDrawValues(false);
+        //barDataSet.setDrawValues(false);
 
         // Error 체크구간2
         System.out.println("에러 체크구간 2 : 이곳이 에러인가요?");
@@ -274,8 +273,7 @@ public class NovemberFragment extends Fragment {
         entries_2.add(new BarEntry(27, 0));
         entries_2.add(new BarEntry(28, 764));
         entries_2.add(new BarEntry(29, 0));
-        entries_2.add(new BarEntry(30, 955));
-        entries_2.add(new BarEntry(31, 0));
+        entries_2.add(new BarEntry(30, 940));
 
         BarDataSet barDataSet_2 = new BarDataSet(entries_2, "전기세");//속성 이름
 
@@ -288,39 +286,39 @@ public class NovemberFragment extends Fragment {
         //barDataSet_2.setDrawCircles(true);
         //barDataSet_2.setDrawHorizontalHighlightIndicator(false);
         //barDataSet_2.setDrawHighlightIndicators(false);
-        barDataSet_2.setDrawValues(false);
+        //barDataSet_2.setDrawValues(false);
 
         ArrayList<BarEntry> entries_3 = new ArrayList<> (); //사용시간
-        entries_3.add(new BarEntry(1, 0));
-        entries_3.add(new BarEntry(2, 1/2));
-        entries_3.add(new BarEntry(3, 5));
-        entries_3.add(new BarEntry(4, 1));
-        entries_3.add(new BarEntry(5, 2));
-        entries_3.add(new BarEntry(6, 1));
-        entries_3.add(new BarEntry(7, 2));
-        entries_3.add(new BarEntry(8, 0));
-        entries_3.add(new BarEntry(9, 1));
-        entries_3.add(new BarEntry(10, 1));
-        entries_3.add(new BarEntry(11, 1));
-        entries_3.add(new BarEntry(12, 1));
-        entries_3.add(new BarEntry(13, 1));
-        entries_3.add(new BarEntry(14, 1));
-        entries_3.add(new BarEntry(15, 1));
-        entries_3.add(new BarEntry(16, 1));
-        entries_3.add(new BarEntry(17, 1));
-        entries_3.add(new BarEntry(18, 1));
-        entries_3.add(new BarEntry(19, 1));
-        entries_3.add(new BarEntry(20, 1));
-        entries_3.add(new BarEntry(21, 1));
-        entries_3.add(new BarEntry(22, 1));
-        entries_3.add(new BarEntry(23, 1));
-        entries_3.add(new BarEntry(24, 1));
-        entries_3.add(new BarEntry(25, 1));
-        entries_3.add(new BarEntry(26, 1));
-        entries_3.add(new BarEntry(27, 1));
-        entries_3.add(new BarEntry(28, 1));
-        entries_3.add(new BarEntry(29, 1));
-        entries_3.add(new BarEntry(30, 1));
+        entries_3.add(new BarEntry(1, 3));
+        entries_3.add(new BarEntry(2, 2));
+        entries_3.add(new BarEntry(3, 0));
+        entries_3.add(new BarEntry(4, 0));
+        entries_3.add(new BarEntry(5, 0));
+        entries_3.add(new BarEntry(6, 0));
+        entries_3.add(new BarEntry(7, 0));
+        entries_3.add(new BarEntry(8, (float)4.2));
+        entries_3.add(new BarEntry(9, 0));
+        entries_3.add(new BarEntry(10, 0));
+        entries_3.add(new BarEntry(11, 0));
+        entries_3.add(new BarEntry(12, 0));
+        entries_3.add(new BarEntry(13, 0));
+        entries_3.add(new BarEntry(14, (float)2.3));
+        entries_3.add(new BarEntry(15, 0));
+        entries_3.add(new BarEntry(16, 0));
+        entries_3.add(new BarEntry(17, 0));
+        entries_3.add(new BarEntry(18, 7));
+        entries_3.add(new BarEntry(19, 0));
+        entries_3.add(new BarEntry(20, 0));
+        entries_3.add(new BarEntry(21, 0));
+        entries_3.add(new BarEntry(22, 0));
+        entries_3.add(new BarEntry(23, 4));
+        entries_3.add(new BarEntry(24, 0));
+        entries_3.add(new BarEntry(25, 0));
+        entries_3.add(new BarEntry(26, 0));
+        entries_3.add(new BarEntry(27, 0));
+        entries_3.add(new BarEntry(28, 8));
+        entries_3.add(new BarEntry(29, 0));
+        entries_3.add(new BarEntry(30, 10));
 
         BarDataSet barDataSet_3 = new BarDataSet(entries_3, "사용시간");//속성 이름
 
@@ -333,7 +331,7 @@ public class NovemberFragment extends Fragment {
         //barDataSet_2.setDrawCircles(true);
         //barDataSet_2.setDrawHorizontalHighlightIndicator(false);
         //barDataSet_2.setDrawHighlightIndicators(false);
-        barDataSet_3.setDrawValues(false);
+       // barDataSet_3.setDrawValues(false);
 
 
         BarData barData = new BarData(barDataSet, barDataSet_2);

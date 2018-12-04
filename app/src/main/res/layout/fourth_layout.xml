@@ -93,13 +93,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="8dp">
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="- QnA 페이지는 에어컨 사용에 있어 자주묻는 질문"/>
+                    android:text="- QnA 페이지는 에어컨 사용에 있어 자주묻는 질문을 담은 페이지로서 위에 버튼을 클릭하면 해당 기업의 자주묻는질문 페이지로 이동합니다"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    android:text="- 궁금하신 질문이나 더 보고싶은 질문이 있으면 클릭 시 해당 웹페이지로 이동합니다."/>
 
             </LinearLayout>
         </LinearLayout>

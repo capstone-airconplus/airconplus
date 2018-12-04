@@ -10,7 +10,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="8dp"
             android:background="@drawable/button_3">
@@ -28,8 +28,8 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="#ffffff"
@@ -62,7 +62,9 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="#ffffff"
-                android:text="저희 ~~"
+                android:text="- Firebase 실시간 데이터베이스는 클라우드 호스팅 데이터베이스로 데이터는 JSON으로 저장되며 연결된 모든 클라이언트에 실시간으로 동기화됩니다.
+- 플라스크(Flask)는 파이썬으로 작성된 마이크로 웹 프레임워크의 하나로, Werkzeug 툴킷과 Jinja2 템플릿 엔진에 기반을 둔다
+- 그 밖에 (Matplotlib, BeautifulSoup, jsoup, MPAndroidChart)가 있다."
                 android:textSize="15dp" />
         </LinearLayout>
         <LinearLayout
@@ -87,8 +89,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:textColor="#ffffff"
+
                 android:layout_marginTop="8dp"
-                android:text="ㅇㅇㅇㅇㅇ"
+                android:text="팀장 : 강명구 - FireBase 구축, DB 구성, 모바일 어플리케이션 기능 개발, 통합 테스트
+팀원 : 윤성찬 - 라즈베리 파이 개발, 웹 인터페이스 및 기능 개발, 라즈베리 파이 테스트, 단위 테스트
+팀원 : 이성호 - 모바일 어플리케이션 기능 개발, 프로젝트에 필요한 수학적 계산식 수립, 단위 테스트
+팀원 : 안성수 - 자료구조 구상 및 구현, 모바일 어플리케이션 인터페이스 개발, 시스템 테스트"
                 android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>

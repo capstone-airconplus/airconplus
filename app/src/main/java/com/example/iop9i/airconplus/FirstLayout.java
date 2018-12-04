@@ -7,6 +7,8 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,16 +44,24 @@ public class FirstLayout extends Fragment {
     //ConnectedTask mConnectedTask = null;
     View v;
 
-    TextView bluetoothText;
-    BluetoothAdapter mBT = BluetoothAdapter.getDefaultAdapter();
+   // TextView bluetoothText;
+  //  BluetoothAdapter mBT = BluetoothAdapter.getDefaultAdapter();
     static boolean isConnectionError = false;
-    private static final String TAG = "BluetoothClient";
+   // private static final String TAG = "BluetoothClient";
     private ArrayAdapter<String> mConversationArrayAdapter;
 
     private TextView textView_intemp;
     private TextView textView_outtemp;
     private TextView textView_inhum;
     private TextView textView_outhum;
+    private TextView textView_wind_strong;
+    private TextView textView_wind_light;
+    private TextView textView_wind_gentle;
+    private ImageView imageView_ice;
+    private ImageView imageView_dehum;
+    String strColor = "#546E7A";
+    String strColor_2 = "#4fc3f7";
+
 
     DatabaseReference mRoot = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mDB = mRoot.child("qi698BDarUgd2ERe1zLOr1GMx4D3");
@@ -67,6 +78,11 @@ public class FirstLayout extends Fragment {
         textView_outtemp = (TextView)v.findViewById(R.id.textView7);
         textView_inhum = (TextView)v.findViewById(R.id.textView5);
         textView_outhum = (TextView)v.findViewById(R.id.textView8);
+        textView_wind_strong = (TextView)v.findViewById(R.id.wind_strong);
+        textView_wind_light = (TextView)v.findViewById(R.id.wind_light);
+        textView_wind_gentle = (TextView)v.findViewById(R.id.wind_gentle);
+        imageView_ice = (ImageView)v.findViewById(R.id.image_ice);
+        imageView_dehum = (ImageView)v.findViewById(R.id.image_dehum);
 
 
         mDB.addValueEventListener(new ValueEventListener() {
@@ -84,7 +100,27 @@ public class FirstLayout extends Fragment {
                 textView_outtemp.setText(temp_out2+"º");
                 textView_inhum.setText(hum_in2+"%");
                 textView_outhum.setText(hum_out2+"%");
+                if(temp_in<28){
+                    textView_wind_strong.setTextColor(Color.parseColor(strColor));
+                    textView_wind_light.setTextColor(Color.parseColor(strColor));
+                    textView_wind_gentle.setTextColor(Color.parseColor(strColor_2));
+                }else if(temp_in<30){
+                    textView_wind_strong.setTextColor(Color.parseColor(strColor));
+                    textView_wind_light.setTextColor(Color.parseColor(strColor_2));
+                    textView_wind_gentle.setTextColor(Color.parseColor(strColor));
+                }else{
+                    textView_wind_strong.setTextColor(Color.parseColor(strColor_2));
+                    textView_wind_light.setTextColor(Color.parseColor(strColor));
+                    textView_wind_gentle.setTextColor(Color.parseColor(strColor));
+                }
+                if(hum_in>60){
+                    imageView_dehum.setColorFilter(Color.parseColor(strColor_2));
+                    imageView_ice.setColorFilter(Color.parseColor(strColor));
 
+                }else{
+                    imageView_dehum.setColorFilter(Color.parseColor(strColor));
+                    imageView_ice.setColorFilter(Color.parseColor(strColor_2));
+                }
 
             }
 

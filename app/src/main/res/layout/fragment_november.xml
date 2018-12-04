@@ -40,7 +40,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
-                android:background="@color/colorButton_background"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"/>
             <Button

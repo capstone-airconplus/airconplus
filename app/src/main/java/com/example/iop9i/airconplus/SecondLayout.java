@@ -87,8 +87,8 @@ public class SecondLayout extends Fragment {
         // loginDTO.indoor_temp
         v = inflater.inflate (R.layout.second_layout, container, false);
 
-        previous_Btn = (Button) v.findViewById(R.id.previous_nov_Button);
-        next_Btn = (Button) v.findViewById(R.id.next_nov_Button);
+        previous_Btn = (Button) v.findViewById(R.id.previous_dec_Button);
+        next_Btn = (Button) v.findViewById(R.id.next_dec_Button);
         notice_second = (LinearLayout)v.findViewById (R.id.notice_2);
 
         previous_Btn.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +97,7 @@ public class SecondLayout extends Fragment {
                 notice_second.setVisibility(View.GONE);
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_2, new OctoberFragment());
+                fragmentTransaction.replace(R.id.fragment_2, new NovemberFragment());
                 fragmentTransaction.commit();
             }
         });
@@ -108,50 +108,51 @@ public class SecondLayout extends Fragment {
                 notice_second.setVisibility (View.GONE);
                 FragmentManager fragmentManager = getFragmentManager ();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction ();
-                fragmentTransaction.replace (R.id.fragment_2, new DecemberFragment());
+                fragmentTransaction.replace (R.id.fragment_2, new OctoberFragment());
                 fragmentTransaction.commit ();
 
             }
         });
 
 
-        barChart = (BarChart)v.findViewById(R.id.novemberchart_money);
+        barChart = (BarChart)v.findViewById(R.id.decemberchart_money);
 
-        barChart_2 = (BarChart)v.findViewById(R.id.novemberchart_time);
+        barChart_2 = (BarChart)v.findViewById(R.id.decemberchart_time);
 
         ArrayList<BarEntry> entries = new ArrayList<> (); //총 전기세
-        entries.add(new BarEntry(1, 3));
-        entries.add(new BarEntry(2, 4));
-        entries.add(new BarEntry(3, 3));
-        entries.add(new BarEntry(4, 4));
-        entries.add(new BarEntry(5, 5));
-        entries.add(new BarEntry(6, 6));
-        entries.add(new BarEntry(7, 7));
-        entries.add(new BarEntry(8, 8));
-        entries.add(new BarEntry(7, 9));
-        entries.add(new BarEntry(8, 10));
-        entries.add(new BarEntry(9, 1));
-        entries.add(new BarEntry(10, 2));
+        entries.add(new BarEntry(1, 7*1000));
+        entries.add(new BarEntry(2, (float)3.1*1000));
+        entries.add(new BarEntry(3, (float)2.4*1000));
+        entries.add(new BarEntry(4, 0));
+        entries.add(new BarEntry(5, 0));
+        entries.add(new BarEntry(6, 0));
+        entries.add(new BarEntry(7, 0));
+        entries.add(new BarEntry(8, 0));
+        entries.add(new BarEntry(7, 0));
+        entries.add(new BarEntry(8, 0));
+        entries.add(new BarEntry(9, 0));
+        entries.add(new BarEntry(10, 0));
         entries.add(new BarEntry(11, 0));
-        entries.add(new BarEntry(12, 4));
-        entries.add(new BarEntry(13, 3));
+        entries.add(new BarEntry(12, 0));
+        entries.add(new BarEntry(13, 0));
         entries.add(new BarEntry(14, 0));
-        entries.add(new BarEntry(15, 4));
-        entries.add(new BarEntry(16, 3));
-        entries.add(new BarEntry(17, 1));
-        entries.add(new BarEntry(18, 2));
+        entries.add(new BarEntry(15, 0));
+        entries.add(new BarEntry(16, 0));
+        entries.add(new BarEntry(17, 0));
+        entries.add(new BarEntry(18, 0));
         entries.add(new BarEntry(19, 0));
-        entries.add(new BarEntry(20, 4));
-        entries.add(new BarEntry(21, 3));
+        entries.add(new BarEntry(20, 0));
+        entries.add(new BarEntry(21, 0));
         entries.add(new BarEntry(22, 0));
-        entries.add(new BarEntry(23, 4));
-        entries.add(new BarEntry(24, 3));
-        entries.add(new BarEntry(25, 1));
-        entries.add(new BarEntry(26, 2));
+        entries.add(new BarEntry(23, 7*1000));
+        entries.add(new BarEntry(24, 0));
+        entries.add(new BarEntry(25, 0));
+        entries.add(new BarEntry(26, 0));
         entries.add(new BarEntry(27, 0));
-        entries.add(new BarEntry(28, 4));
-        entries.add(new BarEntry(29, 3));
+        entries.add(new BarEntry(28, 0));
+        entries.add(new BarEntry(29, 0));
         entries.add(new BarEntry(30, 0));
+        entries.add(new BarEntry(31, 0));
 
         BarDataSet barDataSet = new BarDataSet(entries, "전기세");//속성 이름
         //lineDataSet.setLineWidth(2);
@@ -163,40 +164,41 @@ public class SecondLayout extends Fragment {
         //barDataSet.setDrawCircles(true);
         //barDataSet.setDrawHorizontalHighlightIndicator(false);
         //barDataSet.setDrawHighlightIndicators(false);
-        barDataSet.setDrawValues(false);
+        //barDataSet.setDrawValues(false);
 
 
         ArrayList<BarEntry> entries_2 = new ArrayList<> (); //감면된 전기세 그래프
-        entries_2.add(new BarEntry(1, 0));
-        entries_2.add(new BarEntry(2, 1/2));
-        entries_2.add(new BarEntry(3, 5));
-        entries_2.add(new BarEntry(4, 1));
-        entries_2.add(new BarEntry(5, 2));
-        entries_2.add(new BarEntry(6, 1));
-        entries_2.add(new BarEntry(7, 2));
+        entries_2.add(new BarEntry(1, 623));
+        entries_2.add(new BarEntry(2, 237));
+        entries_2.add(new BarEntry(3, 144));
+        entries_2.add(new BarEntry(4, 0));
+        entries_2.add(new BarEntry(5, 0));
+        entries_2.add(new BarEntry(6, 0));
+        entries_2.add(new BarEntry(7, 0));
         entries_2.add(new BarEntry(8, 0));
-        entries_2.add(new BarEntry(9, 1));
-        entries_2.add(new BarEntry(10, 1));
-        entries_2.add(new BarEntry(11, 1));
-        entries_2.add(new BarEntry(12, 1));
-        entries_2.add(new BarEntry(13, 1));
-        entries_2.add(new BarEntry(14, 1));
-        entries_2.add(new BarEntry(15, 1));
-        entries_2.add(new BarEntry(16, 1));
-        entries_2.add(new BarEntry(17, 1));
-        entries_2.add(new BarEntry(18, 1));
-        entries_2.add(new BarEntry(19, 1));
-        entries_2.add(new BarEntry(20, 1));
-        entries_2.add(new BarEntry(21, 1));
-        entries_2.add(new BarEntry(22, 1));
-        entries_2.add(new BarEntry(23, 1));
-        entries_2.add(new BarEntry(24, 1));
-        entries_2.add(new BarEntry(25, 1));
-        entries_2.add(new BarEntry(26, 1));
-        entries_2.add(new BarEntry(27, 1));
-        entries_2.add(new BarEntry(28, 1));
-        entries_2.add(new BarEntry(29, 1));
-        entries_2.add(new BarEntry(30, 1));
+        entries_2.add(new BarEntry(9, 0));
+        entries_2.add(new BarEntry(10, 0));
+        entries_2.add(new BarEntry(11, 0));
+        entries_2.add(new BarEntry(12, 0));
+        entries_2.add(new BarEntry(13, 0));
+        entries_2.add(new BarEntry(14, 0));
+        entries_2.add(new BarEntry(15, 0));
+        entries_2.add(new BarEntry(16, 0));
+        entries_2.add(new BarEntry(17, 0));
+        entries_2.add(new BarEntry(18, 0));
+        entries_2.add(new BarEntry(19, 0));
+        entries_2.add(new BarEntry(20, 0));
+        entries_2.add(new BarEntry(21, 0));
+        entries_2.add(new BarEntry(22, 0));
+        entries_2.add(new BarEntry(23, 623));
+        entries_2.add(new BarEntry(24, 0));
+        entries_2.add(new BarEntry(25, 0));
+        entries_2.add(new BarEntry(26, 0));
+        entries_2.add(new BarEntry(27, 0));
+        entries_2.add(new BarEntry(28, 0));
+        entries_2.add(new BarEntry(29, 0));
+        entries_2.add(new BarEntry(30, 0));
+        entries_2.add(new BarEntry(31, 0));
 
         BarDataSet barDataSet_2 = new BarDataSet(entries_2, "감면된 전기세");//속성 이름
 
@@ -209,39 +211,40 @@ public class SecondLayout extends Fragment {
         //barDataSet_2.setDrawCircles(true);
         //barDataSet_2.setDrawHorizontalHighlightIndicator(false);
         //barDataSet_2.setDrawHighlightIndicators(false);
-        barDataSet_2.setDrawValues(false);
+        //barDataSet_2.setDrawValues(false);
 
         ArrayList<BarEntry> entries_3 = new ArrayList<> (); //사용시간
-        entries_3.add(new BarEntry(1, 0));
-        entries_3.add(new BarEntry(2, 1/2));
-        entries_3.add(new BarEntry(3, 5));
-        entries_3.add(new BarEntry(4, 1));
-        entries_3.add(new BarEntry(5, 2));
-        entries_3.add(new BarEntry(6, 1));
-        entries_3.add(new BarEntry(7, 2));
+        entries_3.add(new BarEntry(1, 7));
+        entries_3.add(new BarEntry(2, (float)3.1));
+        entries_3.add(new BarEntry(3, (float)2.4));
+        entries_3.add(new BarEntry(4, 0));
+        entries_3.add(new BarEntry(5, 0));
+        entries_3.add(new BarEntry(6, 0));
+        entries_3.add(new BarEntry(7, 0));
         entries_3.add(new BarEntry(8, 0));
-        entries_3.add(new BarEntry(9, 1));
-        entries_3.add(new BarEntry(10, 1));
-        entries_3.add(new BarEntry(11, 1));
-        entries_3.add(new BarEntry(12, 1));
-        entries_3.add(new BarEntry(13, 1));
-        entries_3.add(new BarEntry(14, 1));
-        entries_3.add(new BarEntry(15, 1));
-        entries_3.add(new BarEntry(16, 1));
-        entries_3.add(new BarEntry(17, 1));
-        entries_3.add(new BarEntry(18, 1));
-        entries_3.add(new BarEntry(19, 1));
-        entries_3.add(new BarEntry(20, 1));
-        entries_3.add(new BarEntry(21, 1));
-        entries_3.add(new BarEntry(22, 1));
-        entries_3.add(new BarEntry(23, 1));
-        entries_3.add(new BarEntry(24, 1));
-        entries_3.add(new BarEntry(25, 1));
-        entries_3.add(new BarEntry(26, 1));
-        entries_3.add(new BarEntry(27, 1));
-        entries_3.add(new BarEntry(28, 1));
-        entries_3.add(new BarEntry(29, 1));
-        entries_3.add(new BarEntry(30, 1));
+        entries_3.add(new BarEntry(9, 0));
+        entries_3.add(new BarEntry(10, 0));
+        entries_3.add(new BarEntry(11, 0));
+        entries_3.add(new BarEntry(12, 0));
+        entries_3.add(new BarEntry(13, 0));
+        entries_3.add(new BarEntry(14, 0));
+        entries_3.add(new BarEntry(15, 0));
+        entries_3.add(new BarEntry(16, 0));
+        entries_3.add(new BarEntry(17, 0));
+        entries_3.add(new BarEntry(18, 0));
+        entries_3.add(new BarEntry(19, 0));
+        entries_3.add(new BarEntry(20, 0));
+        entries_3.add(new BarEntry(21, 0));
+        entries_3.add(new BarEntry(22, 0));
+        entries_3.add(new BarEntry(23, 7));
+        entries_3.add(new BarEntry(24, 0));
+        entries_3.add(new BarEntry(25, 0));
+        entries_3.add(new BarEntry(26, 0));
+        entries_3.add(new BarEntry(27, 0));
+        entries_3.add(new BarEntry(28, 0));
+        entries_3.add(new BarEntry(29, 0));
+        entries_3.add(new BarEntry(30, 0));
+        entries_3.add(new BarEntry(31, 0));
 
         BarDataSet barDataSet_3 = new BarDataSet(entries_3, "사용시간");//속성 이름
 
@@ -254,7 +257,7 @@ public class SecondLayout extends Fragment {
         //barDataSet_2.setDrawCircles(true);
         //barDataSet_2.setDrawHorizontalHighlightIndicator(false);
         //barDataSet_2.setDrawHighlightIndicators(false);
-        barDataSet_3.setDrawValues(false);
+       // barDataSet_3.setDrawValues(false);
 
         BarData barData = new BarData(barDataSet, barDataSet_2);
         BarData barData_2 = new BarData(barDataSet_3);
